@@ -6,6 +6,7 @@ class apb_monitor:
     def __init__(self, bus):
         self.bus = bus
         self.ap = Queue()
+        self.cov_q= Queue()
         self.log=logging.getLogger("cocotb.apb_monitor")
     async def run(self):
         while True:
@@ -15,7 +16,7 @@ class apb_monitor:
                 txn = self.sample()
                 self.log.info(f"observed: {txn}")
                 await self.ap.put(txn)
-
+                await self.cov_q.put(txn)
     def sample(self):
         bus = self.bus
         txn = apb_txn()
