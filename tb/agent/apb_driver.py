@@ -1,9 +1,9 @@
 from cocotb.queue import Queue
 from cocotb.triggers import RisingEdge
 class apb_driver:
-    def __init__(self, bus, req_q):
+    def __init__(self, bus):
         self.bus = bus
-        self.req_q = req_q
+        self.req_q = Queue()
 
     async def reset(self):
         self.bus.PRESETn.value=0
