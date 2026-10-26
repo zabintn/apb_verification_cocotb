@@ -60,6 +60,5 @@ async def apb_con_rd_wr(dut):
 @cocotb.test()
 async def apb_random(dut):
     env = await setup(dut)
-    gen = apb_generator(env, mem_bytes=MEMSIZE * 4)
-    await gen.random_traffic(n=50)
+    await env.generator.run(n=50)
     await env.finish()   
