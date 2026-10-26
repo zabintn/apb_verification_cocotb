@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites name="cocotb tests"><testsuite name="test_lib.apb_test" errors="0" failures="3" skipped="0" tests="6" time="0.086" timestamp="2026-10-26T08:15:59.762483+00:00" hostname="894-Nashita"><testcase classname="test_lib.apb_test" name="apb_write_read" time="0.001"><properties><property name="cocotb" value="True" /><property name="random_seed" value="1793002559" /><property name="file" value="/home/nashita/Desktop/practice/apb/tb/test_lib/apb_test.py" /><property name="line" value="13" /><property name="sim_time_unit" value="ns" /><property name="sim_time_start" value="0.0" /><property name="sim_time_stop" value="180.0" /><property name="sim_time_duration" value="180.0" /><property name="sim_time_ratio" value="120331.47306994791" /></properties></testcase><testcase classname="test_lib.apb_test" name="apb_reset_test" time="0.016"><failure message="addr 0 did not clear after reset&#10;assert 2779096485 == 0" type="AssertionError">Traceback (most recent call last):
+  File "/home/nashita/Desktop/practice/apb/tb/test_lib/apb_test.py", line 32, in apb_reset_test
+    assert data==0, f"addr {i*4} did not clear after reset"
+AssertionError: addr 0 did not clear after reset
+assert 2779096485 == 0
+</failure><properties><property name="cocotb" value="True" /><property name="random_seed" value="1793002559" /><property name="file" value="/home/nashita/Desktop/practice/apb/tb/test_lib/apb_test.py" /><property name="line" value="22" /><property name="sim_time_unit" value="ns" /><property name="sim_time_start" value="180.001" /><property name="sim_time_stop" value="2900.001" /><property name="sim_time_duration" value="2720.0" /><property name="sim_time_ratio" value="172908.207993426" /></properties><system-err>Test failed with COCOTB_RANDOM_SEED=1793002559
+</system-err></testcase><testcase classname="test_lib.apb_test" name="apb_overwrite" time="0.001"><properties><property name="cocotb" value="True" /><property name="random_seed" value="1793002559" /><property name="file" value="/home/nashita/Desktop/practice/apb/tb/test_lib/apb_test.py" /><property name="line" value="35" /><property name="sim_time_unit" value="ns" /><property name="sim_time_start" value="2900.002" /><property name="sim_time_stop" value="3170.002" /><property name="sim_time_duration" value="270.0" /><property name="sim_time_ratio" value="185011.21370514925" /></properties></testcase><testcase classname="test_lib.apb_test" name="apb_seq_rd_wr" time="0.028"><failure message="1 scoreboard mismatches&#10;assert 1 == 0&#10; +  where 1 = &lt;env.apb_scoreboard.apb_scoreboard object at 0x77172ed49480&gt;.errors" type="AssertionError">Traceback (most recent call last):
+  File "/home/nashita/Desktop/practice/apb/tb/test_lib/apb_test.py", line 51, in apb_seq_rd_wr
+    await env.finish()
+  File "/home/nashita/Desktop/practice/apb/tb/env/apb_env.py", line 36, in finish
+    self.scoreboard.report()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/nashita/Desktop/practice/apb/tb/env/apb_scoreboard.py", line 26, in report
+    assert self.errors == 0, f"{self.errors} scoreboard mismatches"
+AssertionError: 1 scoreboard mismatches
+assert 1 == 0
+ +  where 1 = &lt;env.apb_scoreboard.apb_scoreboard object at 0x77172ed49480&gt;.errors
+</failure><properties><property name="cocotb" value="True" /><property name="random_seed" value="1793002559" /><property name="file" value="/home/nashita/Desktop/practice/apb/tb/test_lib/apb_test.py" /><property name="line" value="44" /><property name="sim_time_unit" value="ns" /><property name="sim_time_start" value="3170.003" /><property name="sim_time_stop" value="8400.003" /><property name="sim_time_duration" value="5230.0" /><property name="sim_time_ratio" value="183938.19339042492" /></properties><system-err>Test failed with COCOTB_RANDOM_SEED=1793002559
+</system-err></testcase><testcase classname="test_lib.apb_test" name="apb_con_rd_wr" time="0.028"><failure message="1 scoreboard mismatches&#10;assert 1 == 0&#10; +  where 1 = &lt;env.apb_scoreboard.apb_scoreboard object at 0x77172ed49e00&gt;.errors" type="AssertionError">Traceback (most recent call last):
+  File "/home/nashita/Desktop/practice/apb/tb/test_lib/apb_test.py", line 59, in apb_con_rd_wr
+    await env.finish()
+  File "/home/nashita/Desktop/practice/apb/tb/env/apb_env.py", line 36, in finish
+    self.scoreboard.report()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/nashita/Desktop/practice/apb/tb/env/apb_scoreboard.py", line 26, in report
+    assert self.errors == 0, f"{self.errors} scoreboard mismatches"
+AssertionError: 1 scoreboard mismatches
+assert 1 == 0
+ +  where 1 = &lt;env.apb_scoreboard.apb_scoreboard object at 0x77172ed49e00&gt;.errors
+</failure><properties><property name="cocotb" value="True" /><property name="random_seed" value="1793002559" /><property name="file" value="/home/nashita/Desktop/practice/apb/tb/test_lib/apb_test.py" /><property name="line" value="53" /><property name="sim_time_unit" value="ns" /><property name="sim_time_start" value="8400.004" /><property name="sim_time_stop" value="13630.004" /><property name="sim_time_duration" value="5230.0" /><property name="sim_time_ratio" value="186829.32558664147" /></properties><system-err>Test failed with COCOTB_RANDOM_SEED=1793002559
+</system-err></testcase><testcase classname="test_lib.apb_test" name="apb_random" time="0.011"><properties><property name="cocotb" value="True" /><property name="random_seed" value="1793002559" /><property name="file" value="/home/nashita/Desktop/practice/apb/tb/test_lib/apb_test.py" /><property name="line" value="60" /><property name="sim_time_unit" value="ns" /><property name="sim_time_start" value="13630.005" /><property name="sim_time_stop" value="15740.005" /><property name="sim_time_duration" value="2110.0" /><property name="sim_time_ratio" value="187484.84460962808" /></properties></testcase></testsuite></testsuites>
