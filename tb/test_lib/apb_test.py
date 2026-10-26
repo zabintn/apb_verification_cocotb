@@ -1,11 +1,13 @@
 # test_apb.py
 import cocotb
+from cocotb.clock import Clock
 from top.apb_bus import apb_bus
 from env.apb_env import apb_env
 from generator.apb_generator import apb_generator
 MEMSIZE=64
-async def setup(dut):
-    bus = apb_bus(dut)                  # add prefix/signal_map here if needed
+async def setup(dut, period=10):
+    bus = apb_bus(dut)                  
+    cocotb.start_soon(Clock(bus.PCLK, period, unit="ns").start())
     env = apb_env(bus)
     await env.start()
     return env

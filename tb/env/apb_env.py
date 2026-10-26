@@ -1,6 +1,5 @@
 # apb_env.py
 import cocotb
-from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge
 from agent.apb_agent import apb_agent
 from env.apb_scoreboard import apb_scoreboard
@@ -14,8 +13,7 @@ class apb_env:
         self.scoreboard = apb_scoreboard(self.agent.monitor.ap)
         self.generator = apb_generator(self.agent.driver.req_q, mem_bytes=MEMSIZE * 4)
 
-    async def start(self, period_ns=10):
-        cocotb.start_soon(Clock(self.bus.PCLK, period_ns, unit="ns").start())
+    async def start(self):
         await self.agent.driver.reset()     
         await self.agent.start()
         cocotb.start_soon(self.scoreboard.run())

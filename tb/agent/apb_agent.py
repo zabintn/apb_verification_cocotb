@@ -1,4 +1,3 @@
-# apb_agent.py
 import cocotb
 from agent.apb_driver import apb_driver
 from agent.apb_monitor import apb_monitor
